@@ -406,19 +406,10 @@ Add screenshots if applicable
 
 ## Reporting and Communication
 
-### Security Issues
-
-Please report security issues **privately**:
-
-- **Email**: security@staffmon.com
-- **GitHub Security**: [Security Advisory](https://github.com/forniya/StaffLinuxMonitor/security/advisories)
-
 ### Communication Channels
 
 - **GitHub Issues**: Bug reports and feature requests
 - **GitHub Discussions**: General discussions and questions
-- **Discord**: [Community server](https://discord.gg/staffmon)
-- **Email**: info@staffmon.com
 
 ### Community Guidelines
 

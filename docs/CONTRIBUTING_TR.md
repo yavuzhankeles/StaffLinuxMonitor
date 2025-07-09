@@ -406,19 +406,10 @@ Varsa ekran görüntüleri ekleyin
 
 ## Raporlama ve İletişim
 
-### Güvenlik Sorunları
-
-Güvenlik sorunları için lütfen **özel olarak** raporlayın:
-
-- **E-posta**: security@staffmon.com
-- **GitHub Security**: [Security Advisory](https://github.com/forniya/StaffLinuxMonitor/security/advisories)
-
 ### İletişim Kanalları
 
 - **GitHub Issues**: Hata raporları ve özellik istekleri
 - **GitHub Discussions**: Genel tartışmalar ve sorular
-- **Discord**: [Topluluk sunucusu](https://discord.gg/staffmon)
-- **E-posta**: info@staffmon.com
 
 ### Topluluk Kuralları
 
