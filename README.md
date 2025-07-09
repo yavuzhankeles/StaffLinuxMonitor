@@ -13,6 +13,7 @@
 - [Yapılandırma Kılavuzu (TR)](docs/CONFIGURATION_TR.md) | [Configuration Guide (EN)](docs/CONFIGURATION_EN.md)
 - [Kurulum ve Dağıtım (TR)](docs/DEPLOYMENT_TR.md) | [Deployment Guide (EN)](docs/DEPLOYMENT_EN.md)
 - [Sorun Giderme (TR)](docs/TROUBLESHOOTING_TR.md) | [Troubleshooting (EN)](docs/TROUBLESHOOTING_EN.md)
+- [Katkıda Bulunma (TR)](docs/CONTRIBUTING_TR.md) | [Contributing (EN)](docs/CONTRIBUTING_EN.md)
 
 ---
 
@@ -57,7 +58,7 @@
 - [Sıkça Sorulan Sorular ve Sorun Giderme (TR)](docs/TROUBLESHOOTING_TR.md)
 
 ### Katkı ve Destek
-- [Katkı Rehberi (TR)](CONTRIBUTING.md)
+- [Katkı Rehberi (TR)](docs/CONTRIBUTING_TR.md)
 - Sorularınız için: [GitHub Issues](https://github.com/forniya/StaffLinuxMonitor/issues)
 
 ---
@@ -73,6 +74,7 @@
 - [Configuration Guide (EN)](docs/CONFIGURATION_EN.md) | [Yapılandırma Kılavuzu (TR)](docs/CONFIGURATION_TR.md)
 - [Deployment Guide (EN)](docs/DEPLOYMENT_EN.md) | [Kurulum ve Dağıtım (TR)](docs/DEPLOYMENT_TR.md)
 - [Troubleshooting (EN)](docs/TROUBLESHOOTING_EN.md) | [Sorun Giderme (TR)](docs/TROUBLESHOOTING_TR.md)
+- [Contributing (EN)](docs/CONTRIBUTING_EN.md) | [Katkıda Bulunma (TR)](docs/CONTRIBUTING_TR.md)
 
 ---
 
@@ -115,11 +117,11 @@ Customize monitoring via `config.toml`. See [Configuration Guide (EN)](docs/CONF
 - [FAQ & Troubleshooting (EN)](docs/TROUBLESHOOTING_EN.md)
 
 ### Contributing & Support
-- [Contributing Guide (EN)](CONTRIBUTING.md)
+- [Contributing Guide (EN)](docs/CONTRIBUTING_EN.md)
 - For questions: [GitHub Issues](https://github.com/forniya/StaffLinuxMonitor/issues)
 
 ---
 
 **Proje ile ilgili tüm detaylar ve yol haritası için dökümanlara göz atabilirsiniz!**
 
-*If you find this project useful, please consider giving it a ⭐ on GitHub!* 
+*If you find this project useful, please consider giving it a ⭐ on GitHub!*
