@@ -1,0 +1,101 @@
+name: Rust
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+        components: rustfmt, clippy
+        target: x86_64-unknown-linux-musl
+    
+    - name: Install musl-tools and OpenSSL
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y musl-tools musl-dev
+        sudo apt-get install -y pkg-config libssl-dev
+        sudo apt-get install -y build-essential
+        sudo apt-get install -y linux-libc-dev
+    
+    - name: Setup OpenSSL for musl
+      run: |
+        # OpenSSL başlık dosyalarını kopyala
+        sudo mkdir -p /usr/local/include/openssl
+        sudo cp -r /usr/include/openssl/* /usr/local/include/openssl/
+        
+        # Gerekli başlık dosyalarını kopyala
+        sudo mkdir -p /usr/local/include/linux
+        sudo cp -r /usr/include/linux/* /usr/local/include/linux/
+        
+        # asm ve asm-generic başlık dosyalarını kopyala
+        if [ -d "/usr/include/x86_64-linux-gnu/asm" ]; then
+          sudo mkdir -p /usr/local/include/asm
+          sudo cp -r /usr/include/x86_64-linux-gnu/asm/* /usr/local/include/asm/
+        fi
+        
+        if [ -d "/usr/include/x86_64-linux-gnu/asm-generic" ]; then
+          sudo mkdir -p /usr/local/include/asm-generic
+          sudo cp -r /usr/include/x86_64-linux-gnu/asm-generic/* /usr/local/include/asm-generic/
+        fi
+        
+        # OpenSSL yapılandırma dosyasını oluştur
+        echo '#ifndef HEADER_OPENSSLCONF_H
+#define HEADER_OPENSSLCONF_H
+
+#define OPENSSL_THREADS
+#define OPENSSL_NO_EC_NISTP_64_GCC_128
+#define OPENSSL_NO_GMP
+#define OPENSSL_NO_JPAKE
+#define OPENSSL_NO_KRB5
+#define OPENSSL_NO_MD2
+#define OPENSSL_NO_RC5
+#define OPENSSL_NO_RFC3779
+#define OPENSSL_NO_SCTP
+#define OPENSSL_NO_STORE
+#define OPENSSL_API_COMPAT 0x10100000L
+
+#endif' | sudo tee /usr/local/include/openssl/opensslconf.h
+    
+    - name: Build
+      run: cargo build --verbose --target x86_64-unknown-linux-musl --release
+      env:
+        OPENSSL_DIR: /usr/local
+        OPENSSL_INCLUDE_DIR: /usr/local/include
+        OPENSSL_LIB_DIR: /usr/lib/x86_64-linux-gnu
+        CC: x86_64-linux-musl-gcc
+        CFLAGS: -I/usr/local/include
+        RUST_BACKTRACE: 1
+    
+    - name: Run tests
+      run: cargo test --verbose --target x86_64-unknown-linux-musl
+    
+    - name: Create release directory
+      run: mkdir -p release
+    
+    - name: Copy binary to release directory
+      run: cp target/x86_64-unknown-linux-musl/release/staffmon release/
+    
+    - name: Create release archive
+      run: |
+        cd release
+        tar czf staffmon-linux-x86_64.tar.gz staffmon
+    
+    - name: Upload release artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: staffmon-linux-x86_64
+        path: release/staffmon-linux-x86_64.tar.gz 

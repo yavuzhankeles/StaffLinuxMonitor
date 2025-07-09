@@ -1,0 +1,6 @@
+# API Yapılandırması
+base_url = "http://localhost:8080"  # API sunucusunun adresi
+api_key = "your-api-key-here"       # API anahtarı
+timeout_seconds = 30                 # İstek zaman aşımı (saniye)
+retry_count = 3                      # Yeniden deneme sayısı
+rate_limit = 100                     # Saniyede maksimum istek sayısı 

@@ -1,0 +1,29 @@
+[package]
+name = "staffmon"
+version = "1.0.2"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "Linux sistem izleme aracı"
+license = "MIT"
+repository = "https://github.com/forniya/StaffLinuxMonitor"
+readme = "README.md"
+keywords = ["system", "monitor", "linux", "cli", "json", "api"]
+categories = ["command-line-utilities", "system"]
+
+[dependencies]
+sysinfo = "0.29"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = "0.4"
+regex = "1.10"
+nix = "0.27"
+reqwest = { version = "0.11", features = ["json", "blocking"] }
+tokio = { version = "1.0", features = ["full"] }
+dotenv = "0.15"
+config = "0.13"
+anyhow = "1.0"
+thiserror = "1.0"
+log = "0.4"
+env_logger = "0.10"
+log4rs = "1.2"
+daemonize = "0.5" 
