@@ -95,6 +95,14 @@
 ```
 
 ## 📚 Belgeler / Documentation
+
+### Ana Belgeler / Core Documentation
+- **[📖 Belgeler Dizini](docs/INDEX.md)** - Tüm belgelere genel bakış / Complete documentation overview
+- **[🚀 Hızlı Başvuru Kılavuzu](docs/QUICK_REFERENCE.md)** - Hızlı başlangıç / Quick start guide
+- **[📘 API Dokümantasyonu](docs/API_DOCUMENTATION.md)** - Kapsamlı API referansı / Comprehensive API reference
+- **[🔧 Geliştirici Kılavuzu](docs/DEVELOPER_GUIDE.md)** - Özelleştirme ve genişletme / Extension guide
+
+### Ek Kaynaklar / Additional Resources
 - [API Dökümanı (TR)](docs/API_TR.md) | [API Documentation (EN)](docs/API_EN.md)
 - [Yapılandırma Kılavuzu (TR)](docs/CONFIGURATION_TR.md) | [Configuration Guide (EN)](docs/CONFIGURATION_EN.md)
 - [Kurulum ve Dağıtım (TR)](docs/DEPLOYMENT_TR.md) | [Deployment Guide (EN)](docs/DEPLOYMENT_EN.md)
@@ -270,6 +278,14 @@ docker run -d --name staffmon \
 **StaffLinuxMonitor** is a powerful, real-time Linux system monitoring tool written in Rust. It provides comprehensive system insights including CPU, memory, disk usage, network statistics, service status, security information, and hardware details with automatic JSON reporting and API integration.
 
 ## 📚 Documentation
+
+### Core Documentation
+- **[📖 Documentation Index](docs/INDEX.md)** - Complete documentation overview
+- **[🚀 Quick Reference Guide](docs/QUICK_REFERENCE.md)** - Get started quickly
+- **[📘 API Documentation](docs/API_DOCUMENTATION.md)** - Comprehensive API reference
+- **[🔧 Developer Guide](docs/DEVELOPER_GUIDE.md)** - Extend and customize StaffMon
+
+### Additional Resources
 - [API Documentation (EN)](docs/API_EN.md) | [API Dökümanı (TR)](docs/API_TR.md)
 - [Configuration Guide (EN)](docs/CONFIGURATION_EN.md) | [Yapılandırma Kılavuzu (TR)](docs/CONFIGURATION_TR.md)
 - [Deployment Guide (EN)](docs/DEPLOYMENT_EN.md) | [Kurulum ve Dağıtım (TR)](docs/DEPLOYMENT_TR.md)

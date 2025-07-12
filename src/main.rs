@@ -126,6 +126,17 @@ struct RebootRecord {
     reason: Option<String>,
 }
 
+#[derive(Debug, Serialize)]
+struct ProcessInfo {
+    pid: u32,
+    name: String,
+    cpu_usage: f32,
+    memory_usage: u64,
+    status: String,
+    user: String,
+    command: String,
+}
+
 #[derive(Debug)]
 enum PackageManager {
     Apt,
