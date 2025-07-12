@@ -126,6 +126,17 @@ struct RebootRecord {
     reason: Option<String>,
 }
 
+#[derive(Debug, Serialize)]
+struct ProcessInfo {
+    pid: u32,
+    name: String,
+    cpu_usage: f32,
+    memory_usage: u64,
+    status: String,
+    user: String,
+    command: String,
+}
+
 #[derive(Debug)]
 enum PackageManager {
     Apt,
@@ -837,7 +848,7 @@ fn get_system_info() -> SystemInfo {
     let mut process_list = Vec::new();
     for (pid, process) in sys.processes() {
         process_list.push(ProcessInfo {
-            pid: *pid,
+            pid: pid.as_u32(),
             name: process.name().to_string(),
             cpu_usage: process.cpu_usage(),
             memory_usage: process.memory(),
